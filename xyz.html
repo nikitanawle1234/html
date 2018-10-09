@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE book[
+<!ELEMENT book(bname,author,price)>
+<!ELEMENT bname(#PCDATA)>
+<!ELEMENT author(#PCDATA)>
+<!ELEMENT price(#PCDATA)]>
+<book>
+<bname>web programming</bname>
+<author>black book</author>
+<price>345</price>
+</book>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0">
+<xsl:template match="/">
+-<html>
+-<body>
+<h2>Books details</h2>
+-<table border="1">
+-<tr bgcolor="#ffff000">
+<th> Book ID</th>
+<th> Book name</th>
+<th> Author</th>
+<th>publisher</th>
+<th>price</th>
+</tr>
+
+-<xsl:for-each select="class/book">
+-<tr>
+-<td>
+<xsl:value-of select="@bid"/>
+</td>
+-<td>
+<xsl:value-of selct="bname"/>
+</td>
+
+-<td>
+<xsl:value-of select="author"/>
+</td>
+
+-<td>
+<xsl:value-of select="publisher"/>
+</td>
+
+-<td>
+<xsl:value-of select="price"/>
+</td>
+<tr>
+<xsl:for-each>
+</table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
